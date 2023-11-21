@@ -14,6 +14,10 @@ public class Print {
 	        System.out.println("    "+key + " : " + Main.registers.get(key));
 	    }
 	    
-	    System.out.println("===================");
+        System.out.println("Stack:");
+        for (int i = Main.stack.size() - 1; i >= 0; i--) {
+            System.out.println(i + " : " + Main.stack.get(i));
+        }
+        System.out.println("===================");
 	}
 }

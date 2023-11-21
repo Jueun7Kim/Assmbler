@@ -1,6 +1,8 @@
 package Assm;
 
 public class Parser{
+	 
+	 
 	Print Pri = new Print();
 	void pr(){
 		Pri.printRegisters();
@@ -75,8 +77,20 @@ public class Parser{
 			Xor.execute();
 			pr();
 			break;
+			
+			
 		case "push":
+			Main.stack.add(parts[1]);
+			pr();
+			break;
 		case "pop":
+	        if(Main.stack.isEmpty()) {
+	            System.out.println("error : Stack is empty");
+	            System.exit(0);
+	        } else {
+	        	Main.stack.remove(Main.stack.size() - 1);
+	        }
+			pr();
 			break;
 			
 			
