@@ -18,10 +18,6 @@ public class Parser{
 			System.exit(0);
 			break;
 			
-		case "pri":
-			Pri.printRegisters();
-			break;
-			
 			
 		// 명령어
 		case "mov":
@@ -86,7 +82,6 @@ public class Parser{
 		case "pop":
 	        if(Main.stack.isEmpty()) {
 	            System.out.println("error : Stack is empty");
-	            System.exit(0);
 	        } else {
 	        	Main.stack.remove(Main.stack.size() - 1);
 	        }
