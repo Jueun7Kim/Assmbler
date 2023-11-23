@@ -20,10 +20,9 @@ public class Main {
         Parser Ps = new Parser();
         String assmline;
         
-        
+        System.out.println("_start:");
         while(true) {
-            i++;
-            System.out.print("line " + i + " >");
+        	System.out.print("    ");
             assmline = Sc.nextLine();
             Ps.assmparser(assmline);
         }

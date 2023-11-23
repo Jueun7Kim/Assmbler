@@ -12,7 +12,7 @@ public class Print {
 		
 		System.out.println("registers:");
 		if (Main.registers == null || Main.registers.isEmpty()) {
-		    System.out.println("Registers is null");
+		    System.out.println("    Registers is null");
 		} else {
 		    for (String key : Main.registers.keySet()) {
 		        System.out.println("    " + key + " : " + Main.registers.get(key));
@@ -21,7 +21,7 @@ public class Print {
 	    
         System.out.println("Stack:");
         if(Main.stack.size() == 0) {
-        	System.out.println("Stack is Null");
+        	System.out.println("    Stack is Null");
         }
         else {
 	        for (int i = Main.stack.size() - 1; i >= 0; i--) {
