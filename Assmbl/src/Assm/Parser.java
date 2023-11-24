@@ -76,9 +76,18 @@ public class Parser{
 			
 			
 		case "push":
-			Main.stack.add(parts[1]);
-			pr();
-			break;
+		    String itemToPush = parts[1];
+		    if (!Main.stack.contains(itemToPush)) {
+		    	if(!Main.registers.containsKey(itemToPush)) {
+		    		Main.registers.put(itemToPush, "Null");
+		    	}
+		        Main.stack.add(itemToPush);
+		        pr();
+		    } else {
+		        // 스택에 이미 존재하는 경우에 대한 처리 (예: 오류 메시지 출력 등)
+		        System.out.println("already exists");
+		    }
+		    break;
 		case "pop":
 	        if(Main.stack.isEmpty()) {
 	            System.out.println("error : Stack is empty");
@@ -93,6 +102,10 @@ public class Parser{
 			Cmp Cmp = new Cmp(assmline);
 			Cmp.execute();
 			pr();
+			break;
+			
+		default:
+			System.out.println("Command Error!");
 			break;
 		}
 	}
