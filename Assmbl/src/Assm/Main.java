@@ -1,6 +1,5 @@
 package Assm;
 
-import java.util.Scanner;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,15 +15,8 @@ public class Main {
     	
     
     public static void main(String[] args) {
-        Scanner Sc = new Scanner(System.in);
-        Parser Ps = new Parser();
-        String assmline;
+        MainGUI cmd = new MainGUI();
         
-        System.out.println("_start:");
-        while(true) {
-        	System.out.print("    ");
-            assmline = Sc.nextLine();
-            Ps.assmparser(assmline);
-        }
+        cmd.start();
     }
 }

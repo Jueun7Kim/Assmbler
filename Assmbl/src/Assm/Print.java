@@ -1,32 +1,34 @@
 package Assm;
 
+import javax.swing.JTextArea;
+
 public class Print {
-	void printRegisters(){
-		System.out.println("flags:");
-		System.out.println("    "+"ZF : "+Main.ZF);
-		System.out.println("    "+"CF : "+Main.CF);
+	void printRegisters(JTextArea printArea){
+		printArea.append("flags:" + "\n");
+		printArea.append("    "+"ZF : " + Main.ZF + "\n");
+		printArea.append("    "+"CF : " + Main.CF + "\n");
 		
 		
 		
-		System.out.println("registers:");
+		printArea.append("\n" + "registers:" + "\n");
 		if (Main.registers == null || Main.registers.isEmpty()) {
-		    System.out.println("    Registers is null");
+			printArea.append("    Registers is null" + "\n");
 		} else {
 		    for (String key : Main.registers.keySet()) {
-		        System.out.println("    " + key + " : " + Main.registers.get(key));
+		    	printArea.append("    " + key + " : " + Main.registers.get(key) + "\n");
 		    }
 		}
 	    
-        System.out.println("Stack:");
+		printArea.append("\n"+"Stack:" + "\n");
         if(Main.stack.size() == 0) {
-        	System.out.println("    Stack is Null");
+        	printArea.append("    Stack is Null" + "\n");
         }
         else {
 	        for (int i = Main.stack.size() - 1; i >= 0; i--) {
-	        	System.out.println("    -------------");
-	            System.out.println("    | "+i + " |  " + Main.stack.get(i));
+	        	printArea.append("    -------------" + "\n");
+	        	printArea.append("    | "+i + " |  " + Main.stack.get(i) + "\n");
 	        }
-	        System.out.println("    -------------");
+	        printArea.append("    -------------" + "\n");
         }
 	}
 }
