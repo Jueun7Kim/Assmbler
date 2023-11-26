@@ -10,8 +10,8 @@ public class Parser{
 	}
 	
 	void assmparser(String assmline, JTextArea lineArea, JTextArea printArea ){
-		
-		lineArea.append("line > " + assmline + "\n");
+		System.out.println("start:");
+		lineArea.append("    " + assmline + "\n");
 		
 		String[] parts = assmline.split("\\s+");
 		

@@ -11,8 +11,8 @@ public class MainGUI extends JFrame {
     JPanel container = new JPanel();
     JLabel cmdText = new JLabel("command: ");
     JTextField cmdField = new JTextField(20);
-    JTextArea lineArea = new JTextArea(100,50);
-    JTextArea printArea = new JTextArea(100,50);
+    JTextArea lineArea = new JTextArea(20,30);
+    JTextArea printArea = new JTextArea(20,30);
 
     JTextArea registerPrint = new JTextArea(100, 50);
 
@@ -27,7 +27,7 @@ public class MainGUI extends JFrame {
     public void start() {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setTitle("assembler");
-        setSize(screenSize.width, screenSize.height);
+        setSize(screenSize.width/2, screenSize.height/2);
         container.add(cmdText);
         container.add(cmdField);
         setLayout(new BorderLayout());
